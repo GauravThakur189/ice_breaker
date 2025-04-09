@@ -14,7 +14,7 @@ load_dotenv()
 # This function looks up a person's LinkedIn profile URL using their name.
 def lookup(name: str) ->str:
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
-    template = "given the full name (name_of_person) I want you to get it me a link to their Linkedin profile page. Your answer should be a link to the profile page. Do not add any other information."
+    template = "given the full name {name_of_person} I want you to get it me a link to their Linkedin profile page. Your answer should be a link to the profile page. Do not add any other information."
     prompt_template = PromptTemplate(
         template=template,
         input_variables=["name_of_person"],
@@ -46,6 +46,6 @@ def lookup(name: str) ->str:
 
 if __name__ == "__main__":
     # Example usage of the lookup function
-    name = "Gaurav Singh"
+    name = "Gaurav Singh Bundelkhand University LinkedIn profile" ,
     linkedin_profile_URL = lookup(name)
     print(linkedin_profile_URL)
