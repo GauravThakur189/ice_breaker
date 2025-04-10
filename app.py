@@ -15,7 +15,8 @@ def index():
 def process():
     name = request.form['name']
     summary,profile_pic_url = ice_break_with(name=name)
-    return jsonify({'summary_and_facts': summary.to_dict(),
+    print("Summaryyyyyyyyyyyyyyy:", summary)
+    return jsonify({'summary_and_facts': summary.model_dump(),
                     'photoUrl': profile_pic_url})
 
 

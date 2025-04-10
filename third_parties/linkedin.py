@@ -50,4 +50,4 @@ def scrap_linkedin_profile(linkedin_profile_URL: str, mock: bool = False):
 
 if __name__ == "__main__":
     Linkedin_profile_URL = "https://www.linkedin.com/in/gaurav-singh189/"
-    print(scrap_linkedin_profile(Linkedin_profile_URL,mock=True))
+    print(scrap_linkedin_profile(Linkedin_profile_URL))

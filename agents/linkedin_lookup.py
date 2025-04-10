@@ -37,6 +37,7 @@ def lookup(name: str) ->str:
         agent=agent,
         tools=tools_for_agent,
         verbose=True,
+        handle_parsing_errors=True
     )
     result = agent_executer.invoke(
         input={"input":prompt_template.format(name_of_person=name)}
