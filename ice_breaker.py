@@ -10,6 +10,7 @@ from typing import Tuple, Dict
 def ice_break_with(name:str)->tuple[Summary, str]:
     linkedin_username = linkedin_lookup(name=name)
     linkedin_data = scrap_linkedin_profile(linkedin_profile_URL=linkedin_username)
+    print("Linkedin data xx:", linkedin_data)
     summary_template = """
       given the linkdin information {information} about the person from I want to create.
       1. a short summary of the person.
@@ -28,9 +29,9 @@ def ice_break_with(name:str)->tuple[Summary, str]:
 
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
     chain  = summary_prompt_template | llm | summary_parser
-    linkdin_data = scrap_linkedin_profile(linkedin_profile_URL="https://www.linkedin.com/in/gaurav-singh189/", mock= True)
+    # linkdin_data = scrap_linkedin_profile()
     res:Summary = chain.invoke(
-    input={"information": linkdin_data},
+    input={"information": linkedin_data},
     )
     return res, linkedin_data.get("photoUrl")
     

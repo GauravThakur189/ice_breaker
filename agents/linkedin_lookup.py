@@ -44,7 +44,9 @@ def lookup(name: str) ->str:
     )
     linkedin_profile_URL = result["output"]
     return linkedin_profile_URL
-
+# name = "Gaurav Singh Bundelkhand University LinkedIn profile" ,
+# linkedin_profile_URL = lookup(name)
+# print(linkedin_profile_URL)
 if __name__ == "__main__":
     # Example usage of the lookup function
     name = "Gaurav Singh Bundelkhand University LinkedIn profile" ,
